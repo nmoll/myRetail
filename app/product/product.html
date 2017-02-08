@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="col-sm-6">
+        <h3 class="text-center">{{ productCtrl.product.title }}</h3>
+        <div class="section">
+            <carousel images="productCtrl.images" primary="productCtrl.primaryImage"></carousel>
+        </div>
+        <div class="hidden-xs">
+            <product-review review="productCtrl.product.CustomerReview[0]"></product-review>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div ng-repeat="offer in productCtrl.product.Offers[0].OfferPrice">
+            <span class="text-lg"><strong>{{ offer.formattedPriceValue }}</strong></span> <span class="small text-muted">{{ offer.priceQualifier }}</span>
+        </div>
+        <hr />
+        <div class="text-primary">
+            <strong><span class="fa fa-tag"></span> spend $50, ship free</strong>
+        </div>
+        <div class="text-primary">
+            <strong><span class="fa fa-tag"></span> $25 gift card with purchase of select ninja blender</strong>
+        </div>
+        <hr />
+        <div class="section">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="incrementer-input">
+                        <div class="incrementer-label">quantity:</div>
+                        <div class="incrementer">
+                            <span class="incrementer-button">-</span>
+                            <span>1</span>
+                            <span class="incrementer-button">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="row">
+                <div class="col-xs-6">
+                    <button class="btn btn-secondary btn-block" ng-if="productCtrl.isAvailableInStore()">Pick up in store</button>
+                </div>
+                <div class="col-xs-6">
+                    <button class="btn btn-primary btn-block" ng-if="productCtrl.isAvailableOnline()">Add to cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <small>
+                This item must be returned within 30 days of the ship date. See return policy for details. Prices, promotions, styles and availability may vary by store and online.
+            </small>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <button class="btn btn-default btn-block btn-sm">Add to registry</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-default btn-block btn-sm">Add to list</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-default btn-block btn-sm">Share</button>
+            </div>
+        </div>
+        <h2>product hightlights</h2>
+        <ul>
+            <li ng-repeat="feature in productCtrl.product.ItemDescription[0].features" ng-bind-html="feature"></li>
+        </ul>
+        <div class="visible-xs">
+            <product-review review="productCtrl.product.CustomerReview[0]"></product-review>
+        </div>
+    </div>
+</div>

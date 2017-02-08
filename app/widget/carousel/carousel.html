@@ -1,0 +1,21 @@
+<div class="text-center">
+    <img ng-src="{{ carousel.primary }}">
+</div>
+<div class="carousel-scroll">
+    <span class="chevron left"
+          ng-click="carousel.goToPrevious()"
+          ng-hide="carousel.isStart()">
+    </span>
+    
+    <div ng-repeat="image in carousel.visibleImages"
+         class="thumbnail"
+         ng-click="carousel.setPrimary(image)"
+         ng-class="{ 'selected': image === carousel.primary }">
+        <img ng-src="{{ image }}">
+    </div>
+
+    <span class="chevron right"
+          ng-click="carousel.goToNext()"
+          ng-hide="carousel.isEnd()">
+    </span>
+</div>
