@@ -1,20 +1,28 @@
-describe('angularjs homepage', function() {
-  it('should greet the named user', function() {
-    // Load the AngularJS homepage.
-    browser.get('http://www.angularjs.org');
+describe('product', function() {
 
-    // Find the element with ng-model matching 'yourName' - this will
-    // find the <input type="text" ng-model="yourName"/> element - and then
-    // type 'Julie' into it.
-    element(by.model('yourName')).sendKeys('Julie');
+    beforeEach(function () {
+        browser.get('http://localhost:8000/#/product');
+    });
 
-    // Find the element with binding matching 'yourName' - this will
-    // find the <h1>Hello {{yourName}}!</h1> element.
-    var greeting = element(by.binding('yourName'));
+    it('should have title correctly set', function() {
+        var title = element(by.id('product-title'));
+        expect(greeting.getText()).toEqual('Ninja™ Professional Blender with Single Serve Blending Cups');
+    });
 
-    // Assert that the text element has the expected value.
-    // Protractor patches 'expect' to understand promises.
+    it('should have price correctly set', function () {});
 
-    expect(greeting.getText()).toEqual('Hello Julie!');
-  });
+    describe('carousel', function () {
+
+        it('should display image if selected', function () {});
+
+        it('should display next image when carousel is moved to the right', function () {});
+
+        it('should display next image when carousel is moved to the right', function () {});
+
+        it('should have no back arrow if at first image', function () {});
+
+        it('should have no next arrow if at last image', function () {});
+
+    });
+
 });

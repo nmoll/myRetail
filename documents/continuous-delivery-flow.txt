@@ -1,0 +1,7 @@
+Continuous Delivery Diagram:
+
+Once the CI tool is set up (Jenkins)
+
+1. Developer checks in a change
+2. Jenkins notices and starts the tests
+3. If tests pass, the build is started
