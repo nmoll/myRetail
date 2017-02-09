@@ -4,7 +4,7 @@
 function Carousel () {
     return {
         restrict: 'E',
-        templateUrl: 'widget/carousel/carousel.html',
+        templateUrl: 'js/widget/carousel/carousel.html',
         bindToController: true,
         controllerAs: 'carousel',
         controller: [CarouselCtrl],

@@ -4,7 +4,7 @@
 function ProductService ($http) {
 
     this.get = function () {
-        return $http.get('product/item-data.json').then(getResponseData);
+        return $http.get('js/product/item-data.json').then(getResponseData);
     }
 
     function getResponseData (response) {

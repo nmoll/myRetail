@@ -6,7 +6,7 @@ function config ($stateProvider) {
     var productState = {
         controller: 'ProductCtrl as productCtrl',
         url: '/product',
-        templateUrl: 'product/product.html',
+        templateUrl: 'js/product/product.html',
         resolve: {
             product: ['ProductService', function (ProductService) {
                 return ProductService.get();

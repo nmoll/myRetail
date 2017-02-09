@@ -138,3 +138,71 @@ button {
 .rating-star.selected {
     color: red;
 }
+
+.thumbnail {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: 100px;
+}
+
+.thumbnail.selected {
+    border-color: gray;
+}
+
+.carousel-scroll {
+    max-width: 346px;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.chevron {
+    position: absolute;
+    cursor: pointer;
+}
+
+.chevron.left {
+    left: -12px;
+    top: 37px;
+}
+
+.chevron.right {
+    right: -7px;
+    top: 37px;
+}
+
+.chevron::before {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 20px;;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 20px;
+}
+
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+	top: 0;
+	transform: rotate(135deg);
+}
+
+.chevron.left:before {
+	left: 0.25em;
+	transform: rotate(-135deg);
+}
